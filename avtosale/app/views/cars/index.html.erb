@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t('.hello') %></h1>
+
+<h3><%= t('.total_quantity') %> <%= @cars.total_count %></h3> 
+
+<%= render 'search_rules' if session[:previous_params].present? %>
+
+<div>
+  <%= form_with url: cars_path, method: :get, data: { turbo: false }, class: 'form-inline' do |f| %>
+    <%= f.label :sort_by, t('.sort_order') %>
+    <%= f.select :sort_by, [[t('.date_added_desc'), 'date_added_desc'], [t('.date_added_asc'), 'date_added_asc'], [t('.price_desc'), 'price_desc'], [t('.price_asc'), 'price_asc']], selected: params[:sort_by] %>
+    <%= f.submit t('.sort') %>
+  <% end %>
+</div>
+
+<div id="cars">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col"><%= t('make') %></th>
+      <th scope="col"><%= t('model') %></th>
+      <th scope="col"><%= t('year') %></th>
+      <th scope="col"><%= t('odometer') %></th>
+      <th scope="col"><%= t('price') %></th>
+      <th scope="col"><%= t('description') %></th>
+      <th scope="col"><%= t('date added') %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cars.each do |car| %>
+    <%= render car %>
+  <% end %>
+  </tbody>
+  </table>
+
+  <%= paginate @cars %>
+</div>
+
+<%= render 'share/footer' %>

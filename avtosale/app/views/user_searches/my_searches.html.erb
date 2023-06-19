@@ -1,0 +1,24 @@
+<h1><%= t('.my_searches') %></h1>
+
+<div id="searches">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col"><%= t('make') %></th>
+      <th scope="col"><%= t('model') %></th>
+      <th scope="col"><%= t('.year_from') %></th>
+      <th scope="col"><%= t('.year_to') %></th>
+      <th scope="col"><%= t('.price_from') %></th>
+      <th scope="col"><%= t('.price_to') %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @my_searches.each do |my_search| %>
+    <%= render 'user_searches/my_search', { my_search: my_search } %>
+  <% end %>
+  </tbody>
+  </table>
+  </div>
+
+  <%= render 'share/footer' %>

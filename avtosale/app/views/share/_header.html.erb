@@ -1,0 +1,14 @@
+<div>
+    <%= link_to "English", request.query_parameters.merge(lang: :en) %> 
+    <%= link_to "Ukrainian", request.query_parameters.merge(lang: :uk) %>  
+</div>
+
+<% if user_signed_in? %>
+    <%= button_to t('my_searches'), my_searches_path,  method: :get, class: 'btn btn-primary' %>
+    <%= button_to t('add car'), new_car_path,  method: :get, class: 'btn btn-primary' %>
+    <div> <%= t('hello') %> <%= current_user.email %> </div>
+    <%= button_to t('log_out'), destroy_user_session_path, method: :delete, data: { turbo: false}, class: 'btn btn-primary' %>
+<% else %>
+    <%= button_to t('log_in'), new_user_session_path, method: :get, class: 'btn btn-primary' %>
+    <%= button_to t('sign_up'), new_user_registration_path, method: :get, class: 'btn btn-primary' %>
+ <% end %>

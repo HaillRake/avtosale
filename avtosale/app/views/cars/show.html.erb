@@ -1,0 +1,10 @@
+<%= render @car %>
+
+<div>
+  <%= link_to t('edit_car'), edit_car_path(@car) %> |
+  <%= link_to t('cars_list'), cars_path %>
+
+  <%= button_to t('destroy_car'), @car, method: :delete %>
+</div>
+
+<%= render 'share/footer' %>

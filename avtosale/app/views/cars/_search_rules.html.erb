@@ -1,0 +1,8 @@
+<% if session[:previous_params].present? %>
+<div id="search_rules"> 
+     <div><%= t('make') %> : <%=session[:previous_params][:make] %></div>
+     <div><%= t('model') %> : <%= label_tag :model, session[:previous_params][:model] %></div>
+     <div><%= t('years') %> : <%= label_tag :year_from, session[:previous_params][:year_from] %> - <%= label_tag :year_to, session[:previous_params][:year_to] %></div>
+     <div><%= t('price') %> : <%= label_tag :price_from, session[:previous_params][:price_from] %> - <%= label_tag :price_to, session[:previous_params][:price_to] %></div>
+</div>
+<% end %>

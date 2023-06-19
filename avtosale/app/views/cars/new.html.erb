@@ -1,0 +1,11 @@
+<h1><%= t('new_car') %></h1>
+
+<%= render "form", car: @car %>
+
+<br>
+
+<div>
+  <%= link_to t('cars_list'), cars_path %>
+</div>
+
+<%= render 'share/footer' %>

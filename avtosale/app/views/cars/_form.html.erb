@@ -1,0 +1,52 @@
+<%= form_with(model: car) do |form| %>
+  <% if car.errors.any? %>
+    <div style="color: red">
+      <h2><%= t('error') %> : <%= car.errors.count %> - <%= t('error_message') %></h2>
+
+      <ul>
+        <% car.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label t('make'), style: "display: block" %>
+    <%= form.text_field :make %>
+  </div>
+
+  <div>
+    <%= form.label t('model'), style: "display: block" %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div>
+    <%= form.label t('year'), style: "display: block" %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div>
+    <%= form.label t('odometer'), style: "display: block" %>
+    <%= form.number_field :odometer %>
+  </div>
+
+  <div>
+    <%= form.label t('price'), style: "display: block" %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div>
+    <%= form.label t('description'), style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label t('date_added'), style: "display: block" %>
+    <%= form.date_field :date_added %>
+  </div>
+
+  <div>
+    <%= form.submit t('create_car')%>
+  </div>
+<% end %>

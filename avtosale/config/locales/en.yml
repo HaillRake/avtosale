@@ -1,0 +1,108 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: Hello!
+  help: Help
+  search: Search
+  cars_list: Cars List
+  back_home: Back to Home page
+  log_in: Log in
+  log_out: Log Out
+  sign_up: Sign up
+  my_searches: My searches
+  make: Make
+  model: Model
+  years: year from - year to
+  price: price from - price to
+  password_error: (8 - 20 symbols) have to include 1 capital letter, 2 special characters
+  email_error: Please, enter email-type format and at least 5 symbols before @
+  add_car: Add car
+  new_car: New car
+  year: Year
+  odometer: Odometer
+  price: Price
+  description: Description
+  date_added: Date added
+  create_car: Create car
+  edit_car: Edit this car
+  destroy_car: Destroy this car
+  error_message: 'prohibited this car from being saved:'
+  error: Errors
+  show_car: Show this car
+  make_model_error: should have 3 - 50 symbols and consists only of English letters
+  cars:
+    index:
+      hello: Hello!
+      sort: Sort
+      sort_order: Sort by order
+      date_added_desc: Date added desc
+      date_added_asc: Date added asc
+      price_desc: Price desc
+      price_asc: Price asc
+      total_quantity: Total Quantity 
+    create: 
+      notice: Car was successfully created.
+    update:
+      notice: Car was successfully updated.
+    destroy:
+      notice: Car was successfully destroyed.
+    search:
+      rules: Please select search rules.
+      search: Search
+  user_searches:
+    help:
+      help: Help
+      help_info: "Enter %{option1} to search for a car by parameters. You can set make, model,
+        year_from, year_to, price_from, price_to and
+        choose sorting parameters (price, date_added).
+
+        Enter %{option2} to view all cars in the database.
+
+        Enter %{option3} for help."
+    search:
+      rules: Please select search rules.
+      search: Search
+      years: year from - year to
+      price: price from - price to
+    my_searches:
+      my_searches: My Searches
+      year_from: Year from
+      year_to: Year to
+      price_from: Price from
+      price_to: Price to
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
